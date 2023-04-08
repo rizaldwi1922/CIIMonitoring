@@ -25,4 +25,6 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 });
 
-
+Route::controller(App\Http\Controllers\Api\ShipController::class)->group(function () {
+    Route::post('ship/storeOrUpdate', 'storeOrUpdate');
+});
