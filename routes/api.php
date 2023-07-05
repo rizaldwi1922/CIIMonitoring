@@ -28,3 +28,7 @@ Route::middleware(['auth:api'])->group(function () {
 Route::controller(App\Http\Controllers\Api\ShipController::class)->group(function () {
     Route::post('ship/storeOrUpdate', 'storeOrUpdate');
 });
+
+Route::controller(App\Http\Controllers\Api\AisController::class)->group(function () {
+    Route::get('/getAis', 'index');
+});
